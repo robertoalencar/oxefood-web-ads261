@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Container, Divider, Form, Header, Icon, Menu, Modal, Segment, Table } from 'semantic-ui-react';
+import { Button, Container, Divider, Form, Header, Icon, Image, Menu, Modal, Segment, Table } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 
 export default function ListProduto () {
@@ -197,6 +197,7 @@ export default function ListProduto () {
 
                             <Table.Header>
                                 <Table.Row>
+                                    <Table.HeaderCell>Imagem</Table.HeaderCell>
                                     <Table.HeaderCell>Código</Table.HeaderCell>
                                     <Table.HeaderCell>Categoria</Table.HeaderCell>
                                     <Table.HeaderCell>Título</Table.HeaderCell>
@@ -213,6 +214,7 @@ export default function ListProduto () {
                                 { listaProdutos.map(p => (
 
                                     <Table.Row key={p.id}>
+                                        <Table.Cell><Image src={`imagens_cadastradas/${p.imagem}`} /></Table.Cell>
                                         <Table.Cell>{p.codigo}</Table.Cell>
                                         <Table.Cell>{p.categoria.descricao}</Table.Cell>
                                         <Table.Cell>{p.titulo}</Table.Cell>
